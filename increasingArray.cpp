@@ -1,27 +1,17 @@
 #include <bits/stdc++.h>
-//note works but can be improved effiency wise at it fails test case #6
+//optimised after using a better way to input numbers,no longer parsing strings, speed improved dramatically
 using namespace std;
 int main()
 {
     string s;
-    string t;
-    getline(cin, t);
-    getline(cin, s);
-    vector<long long> v;
-    long long start = 0;
-    long long len = 1;
-    for (unsigned long long i = 0; i < s.length(); i++)
-    {
-        if (s.at(i) == ' ' || i == s.length() - 1)
+    long long t;
+    cin >> t;
 
-        {
-            v.push_back(stoi(s.substr(start, len)));
-            start = i + 1;
-        }
-        else
-        {
-            len++;
-        }
+    vector<long long> v;
+    long long x;
+    while (cin >> x)
+    {
+        v.push_back(x);
     }
     long long total = 0;
     if (v.size() == 1)
